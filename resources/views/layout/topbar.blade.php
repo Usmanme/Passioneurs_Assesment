@@ -84,7 +84,7 @@
                 </a>
                 <a class="menu-link" href="#">
                     <i class="fa-solid fa-chevron-down"></i>
-                    <span>البحث عن فريلانسر</span>
+                    <span>البحث عن فریلانسرز</span>
                 </a>
             </div>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Passioneurs</title>
     <style>
         /* header */
 
@@ -61,6 +61,7 @@
             margin-top: 9px;
             width: 100%;
             flex-direction: column;
+            margin-left: 200px;
         }
 
         @media (max-width: 991px) {
@@ -101,7 +102,7 @@
             font-weight: 800;
             flex-grow: 1;
             width: 198px;
-            margin-left: 710px;
+            margin-left: 745px;
         }
 
         .profile-details {
@@ -197,6 +198,7 @@
             border-radius: 237px;
             max-width: 100%;
             flex-grow: 1;
+            margin-left: auto;
         }
 
         @media (max-width: 991px) {
@@ -823,138 +825,139 @@
                 class="icon" alt="" />
         </div>
     </section>
-    <div class="main-container">
-        <section class="image-model-container">
-            <h2 class="image-model-title">نموذج الصور</h2>
-            <div class="content-wrapper">
-                <p class="image-model-description">
-                    يساعدك في تعزيز احترافيتك للعملاء كل ماكان المشروع مليء بالصور كل
-                    ماوثق العميل في التعامل معك
-                </p>
-                <h3 class="work-cover-title">غلاف العمل</h3>
-            </div>
-            <div class="skills-wrapper">
-                <p class="work-cover-description">
-                    يساعدك في ابراز احترافيتك وجذب العملاء من خلال غلاف جذاب
-                </p>
-                <h3 class="skills-title">مهارات العمل</h3>
-                <p class="skills-description">
-                    توضح للعميل المهارات المستخدمة في تنفيذ العمل ، وتعزز تمكنك من العمل
-                    المنفذ
-                </p>
-                <h3 class="work-description-title">وصف العمل</h3>
-            </div>
-            <p class="work-description-content">
-                اكتب وصف دقيق للعمل توضح فية العمل المنجز لابراز قدراتك ونجاحك في
-                العمل
-            </p>
-        </section>
-
-        <section class="upload-section">
-            <div class="progresss-bar">
-                <div class="step-circle">
-                    <div class="step-inner-circle"></div>
+    <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="main-container">
+            <section class="image-model-container">
+                <h2 class="image-model-title">نموذج الصور</h2>
+                <div class="content-wrapper">
+                    <p class="image-model-description">
+                        يساعدك في تعزيز احترافيتك للعملاء كل ماكان المشروع مليء بالصور كل
+                        ماوثق العميل في التعامل معك
+                    </p>
+                    <h3 class="work-cover-title">غلاف العمل</h3>
                 </div>
-                <div class="progress-line"></div>
-                <div class="step-circle active-step">
-                    <div class="step-inner-circle active-inner-circle"></div>
+                <div class="skills-wrapper">
+                    <p class="work-cover-description">
+                        يساعدك في ابراز احترافيتك وجذب العملاء من خلال غلاف جذاب
+                    </p>
+                    <h3 class="skills-title">مهارات العمل</h3>
+                    <p class="skills-description">
+                        توضح للعميل المهارات المستخدمة في تنفيذ العمل ، وتعزز تمكنك من العمل
+                        المنفذ
+                    </p>
+                    <h3 class="work-description-title">وصف العمل</h3>
                 </div>
-                <div class="progress-line"></div>
-                <div class="step-circle">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e2fb8ecbf31ede605e3b4d8d57b6c109806e631d62356ee49c37ab9e30874f9?apiKey=3543d39e660b480d8d9ca32bb38e65cc&"
-                        alt="" class="step-icon" />
-                </div>
-            </div>
-            <div class="step-titles">
-                <div>مراجعة العمل</div>
-                <div>تفاصيل العمل</div>
-                <div>عنوان العمل</div>
-            </div>
-            <h2 class="upload-instruction">
-                <span style="color: #ff0909">*</span>
-                يجب عليك إضافة صورة غلاف لمشروعك
-            </h2>
-
-            <div class="upload-area" id="uploadArea" tabindex="0" role="button">
-                <span>قم بسحب الصور وإفلاتها أو</span>
-                <span style="color: #3d96fc; cursor: pointer;">تصفح</span>
-                <span>ملفات الصور</span>
-                <input type="file" id="fileInput" style="display: none;" accept="image/*">
-            </div>
-
-
-
-            <ul class="upload-requirements">
-                <li>
-                    الصور (.jpg، .gif، .png، يصل حجمها إلى 10 ميغابايت، ولا يزيد حجمها
-                    عن 4000 بكسل في أي بُعد)
-                </li>
-            </ul>
-            <ul class="image-dimensions">
-                <li>ابعاد الصورة ( 300*300)</li>
-            </ul>
-            <ul class="max-images">
-                <li>الحد الاقصى لمجموع الصور ( 20 صورة)</li>
-            </ul>
-
-            <section class="product-card-container" style="display: flex; width: 100%; flex-wrap: wrap">
-                <article class="product-card">
-
-                    <div class="progress-container">
-                        <div id="previewContainer" style="width:163px; height:146px;"></div>
-
-                        <div id="progressContainer" style="display: none;">
-                            <progress id="progressBar" value="0" max="100"></progress>
-                        </div>
-                        <div class="progresss-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-                </article>
-
-
+                <p class="work-description-content">
+                    اكتب وصف دقيق للعمل توضح فية العمل المنجز لابراز قدراتك ونجاحك في
+                    العمل
+                </p>
             </section>
-            <section class="project-details">
+
+            <section class="upload-section">
+                <div class="progresss-bar">
+                    <div class="step-circle">
+                        <div class="step-inner-circle"></div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="step-circle active-step">
+                        <div class="step-inner-circle active-inner-circle"></div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="step-circle">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e2fb8ecbf31ede605e3b4d8d57b6c109806e631d62356ee49c37ab9e30874f9?apiKey=3543d39e660b480d8d9ca32bb38e65cc&"
+                            alt="" class="step-icon" />
+                    </div>
+                </div>
+                <div class="step-titles">
+                    <div>مراجعة العمل</div>
+                    <div>تفاصيل العمل</div>
+                    <div>عنوان العمل</div>
+                </div>
                 <h2 class="upload-instruction">
-                    <span class="required">*</span>
+                    <span style="color: #ff0909">*</span>
                     يجب عليك إضافة صورة غلاف لمشروعك
                 </h2>
-                <div class="upload-area" id="uploadArea2" tabindex="0" role="button">
+
+                <div class="upload-area" id="uploadArea" tabindex="0" role="button">
                     <span>قم بسحب الصور وإفلاتها أو</span>
                     <span style="color: #3d96fc; cursor: pointer;">تصفح</span>
                     <span>ملفات الصور</span>
-                    <input type="file" id="fileInput2" style="display: none;" accept="image/*">
+                    <input type="file" id="fileInput" name="project_images[]" style="display: none;" accept="image/*" multiple>
                 </div>
 
-                <article class="product-card-variant">
+
+
+                <ul class="upload-requirements">
+                    <li>
+                        الصور (.jpg، .gif، .png، يصل حجمها إلى 10 ميغابايت، ولا يزيد حجمها
+                        عن 4000 بكسل في أي بُعد)
+                    </li>
+                </ul>
+                <ul class="image-dimensions">
+                    <li>ابعاد الصورة ( 300*300)</li>
+                </ul>
+                <ul class="max-images">
+                    <li>الحد الاقصى لمجموع الصور ( 20 صورة)</li>
+                </ul>
+
+
+
+                <section class="project-details">
+                    <h2 class="upload-instruction">
+                        <span class="required">*</span>
+                        يجب عليك إضافة صورة غلاف لمشروعك
+                    </h2>
+                    <div class="upload-area" id="uploadArea2" tabindex="0" role="button">
+                        <span>قم بسحب الصور وإفلاتها أو</span>
+                        <span style="color: #3d96fc; cursor: pointer;">تصفح</span>
+                        <span>ملفات الصور</span>
+                        <input type="file" id="fileInput2"  name="cover_photo" style="display: none;" accept="image/*">
+                    </div>
+
+                    <article class="product-card-variant">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d4e465a50277a10fd70db7246230a117545933a863c58e950f5961e2176e5983?apiKey=3543d39e660b480d8d9ca32bb38e65cc&"
+                            alt="Product 4" class="product-image" />
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f304c943c9c6e4e560b005cdc45aeddd7c20c7de290379e5abeaead7dd805a43?apiKey=3543d39e660b480d8d9ca32bb38e65cc&"
+                            alt="" class="icon" />
+                        <div class="progress-container-variant">
+                            <span class="visually-hidden">Progress:</span>
+                            <span>100%</span>
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </article>
+                    {{-- <article class="product-card-variant">
 
                     <div id="previewContainer2"></div>
                     <div id="progressContainer2" style="display: none;">
                         <progress id="progressBar2" value="0" max="100"></progress>
                     </div>
 
-                </article>
+                </article> --}}
 
-                <h3 class="description-title">اختر مهارات العمل</h3>
-                <div class="skills-input">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3e4c17e1dcee2fa4ee809059e86081dfd386f0be370cc3ba6bb65bf5e18a8ec?apiKey=3543d39e660b480d8d9ca32bb38e65cc&"
-                        alt="" class="skills-icon" />
-                </div>
-                <h3 class="description-title">وصف العمل</h3>
-                <textarea class="description-input" aria-label="وصف العمل"></textarea>
-            </section>
+                    <h3 class="description-title">اختر مهارات العمل</h3>
+                    <div class="skills-input" name="job_skills">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3e4c17e1dcee2fa4ee809059e86081dfd386f0be370cc3ba6bb65bf5e18a8ec?apiKey=3543d39e660b480d8d9ca32bb38e65cc&"
+                            alt="" class="skills-icon" />
+                    </div>
+                    <h3 class="description-title">وصف العمل</h3>
+                    <textarea class="description-input" aria-label="وصف العمل" name="work_description"></textarea>
+                </section>
 
-            <section class="action-buttons">
-                <button class="next-button" type="button">
-                    <span class="visually-hidden">Next</span>
-                    التالي
-                </button>
-                <button class="cancel-button" type="button">
-                    <span class="visually-hidden">Cancel</span>
-                    الغاء
-                </button>
+                <section class="action-buttons">
+                    <button class="next-button" type="submit">
+                        <span class="visually-hidden">Next</span>
+                        التالي
+                    </button>
+                    <button class="cancel-button" type="button">
+                        <span class="visually-hidden">Cancel</span>
+                        الغاء
+                    </button>
+                </section>
             </section>
-        </section>
-    </div>
+        </div>
+    </form>
 </body>
 
 <script>
