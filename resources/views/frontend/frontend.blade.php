@@ -538,7 +538,7 @@
 
         .upload-instruction {
             color: #000;
-            text-align: center;
+            text-align: end;
             margin: 20px 0;
             font: 400 20px ABeeZee, sans-serif;
             margin-left: auto;
@@ -555,6 +555,7 @@
             width: 440px;
             height: 154px;
             margin-left: auto;
+            align-content: center;
         }
 
         .upload-requirements,
